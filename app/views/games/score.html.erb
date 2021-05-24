@@ -1,0 +1,12 @@
+<h1>Result</h1>
+
+<% if @content['found'] == false %>
+  <p>Sorry but <strong><%= @up_word %></strong> does not seem to be a valid English word...</p>
+<% elsif @grid_testing == false || @length_testing == false || @word_testing == false %>
+  <p>Sorry but <strong><%= @up_word %></strong> can't be built out of <%= @letters.join(',') %></p>
+<% else %>
+  <p><strong>Congratulations!</strong> <%= @up_word %> is a valid English word!</p>
+  <p>Your score is: <%= @word.length %></p>
+<% end %>
+
+<%= link_to 'Play again', new_path %>
